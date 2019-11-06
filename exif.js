@@ -591,7 +591,7 @@
                 } else {
                     offset = numValues > 4 ? valueOffset : (entryOffset + 8);
                     vals = [];
-                    for (n=0;n<numValues;n++) {
+                    for (var n=0;n<numValues;n++) {
                         vals[n] = file.getUint8(offset + n);
                     }
                     return vals;
@@ -607,7 +607,7 @@
                 } else {
                     offset = numValues > 2 ? valueOffset : (entryOffset + 8);
                     vals = [];
-                    for (n=0;n<numValues;n++) {
+                    for (var n=0;n<numValues;n++) {
                         vals[n] = file.getUint16(offset + 2*n, !bigEnd);
                     }
                     return vals;
@@ -618,7 +618,7 @@
                     return file.getUint32(entryOffset + 8, !bigEnd);
                 } else {
                     vals = [];
-                    for (n=0;n<numValues;n++) {
+                    for (var n=0;n<numValues;n++) {
                         vals[n] = file.getUint32(valueOffset + 4*n, !bigEnd);
                     }
                     return vals;
@@ -634,7 +634,7 @@
                     return val;
                 } else {
                     vals = [];
-                    for (n=0;n<numValues;n++) {
+                    for (var n=0;n<numValues;n++) {
                         numerator = file.getUint32(valueOffset + 8*n, !bigEnd);
                         denominator = file.getUint32(valueOffset+4 + 8*n, !bigEnd);
                         vals[n] = new Number(numerator / denominator);
@@ -649,7 +649,7 @@
                     return file.getInt32(entryOffset + 8, !bigEnd);
                 } else {
                     vals = [];
-                    for (n=0;n<numValues;n++) {
+                    for (var n=0;n<numValues;n++) {
                         vals[n] = file.getInt32(valueOffset + 4*n, !bigEnd);
                     }
                     return vals;
@@ -660,7 +660,7 @@
                     return file.getInt32(valueOffset, !bigEnd) / file.getInt32(valueOffset+4, !bigEnd);
                 } else {
                     vals = [];
-                    for (n=0;n<numValues;n++) {
+                    for (var n=0;n<numValues;n++) {
                         vals[n] = file.getInt32(valueOffset + 8*n, !bigEnd) / file.getInt32(valueOffset+4 + 8*n, !bigEnd);
                     }
                     return vals;
